@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class Driver : MonoBehaviour
 {
+
+    float steerSpeed = 0.5f;
+    float moveSpeed = .25f;
         void Start()
     {
         
@@ -10,7 +13,7 @@ public class Driver : MonoBehaviour
    
     void Update()
     {
-        transform.Rotate(0,0,0.5f);
-        transform.Translate(0,.05f,0);
+        transform.Rotate(0,0,steerSpeed);
+        transform.Translate(0,moveSpeed,0);
     }
 }
