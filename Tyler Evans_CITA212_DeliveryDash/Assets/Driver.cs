@@ -9,31 +9,34 @@ public class Driver : MonoBehaviour
        
     void Update()
     {
+        float steer = 0f;
+        float move = 0f;
+
         if(Keyboard.current.wKey.isPressed)
         {
-            Debug.Log("We are pushing Forward");
+            move = 1f;
         }
 
-         else if(Keyboard.current.aKey.isPressed)
+         else if(Keyboard.current.sKey.isPressed)
         {
-            Debug.Log("We are pushing Left");
+            move = -1f;
         }
 
-         if(Keyboard.current.sKey.isPressed)
+         if(Keyboard.current.aKey.isPressed)
         {
-            Debug.Log("We are pushing backwards");
+           steer = 1f;
         }
 
          else if(Keyboard.current.dKey.isPressed)
         {
-            Debug.Log("We are pushing Right");
+            steer = -1f;
         }
         
         
         
         
         
-        transform.Rotate(0,0,steerSpeed);
-        transform.Translate(0,moveSpeed,0);
+        transform.Rotate(0,0,steer * steerSpeed);
+        transform.Translate(0,move *moveSpeed,0);
     }
 }
