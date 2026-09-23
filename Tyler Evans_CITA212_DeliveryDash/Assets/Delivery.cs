@@ -1,8 +1,16 @@
+using NUnit.Framework;
 using UnityEngine;
 
 public class Delivery : MonoBehaviour
 {
-   
+
+    bool hasPackage;
+
+    void Start()
+    {
+        Debug.Log(hasPackage);
+    }
+
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -10,12 +18,14 @@ public class Delivery : MonoBehaviour
 
         {
             Debug.Log("Pickup Package");
+            hasPackage = true;
         }
 
-        if(collision.CompareTag("Customer"))
+        if(collision.CompareTag("Customer") && hasPackage)
 
         {
             Debug.Log("Package Delivered");
+            hasPackage = false;
         }
     }
 }
