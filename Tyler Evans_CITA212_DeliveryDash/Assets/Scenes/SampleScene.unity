@@ -22801,6 +22801,12 @@ MonoBehaviour:
   currentSpeed: 5
   boostSpeed: 10
   regularSpeed: 5
+  deliverySpeed: 7
+  boostText: {fileID: 1935496226}
+  statusText: {fileID: 0}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  packageColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  deliveredColor: {r: 0, g: 1, b: 0, a: 1}
 --- !u!212 &1951243665
 SpriteRenderer:
   serializedVersion: 3
