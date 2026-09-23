@@ -5,6 +5,7 @@ public class Delivery : MonoBehaviour
 {
 
     bool hasPackage;
+    [SerializeField] float delay = 1f;
 
     void Start()
     {
@@ -14,11 +15,12 @@ public class Delivery : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Package"))
+        if(collision.CompareTag("Package") && !hasPackage)
 
         {
-            Debug.Log("Pickup Package");
+            Debug.Log("Picked up Package");
             hasPackage = true;
+            Destroy(collision.gameObject, delay);
         }
 
         if(collision.CompareTag("Customer") && hasPackage)
